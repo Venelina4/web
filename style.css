@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+/*body*/
+
+body {
+    text-align: center;
+}
+
+:root {
+    --bg-color: #111;
+    --text-color: #fff;
+    --accent-color: #ff0000;
+    --secondary-color: #333;
+    --gray-color: #888;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/*header*/
+header {
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.7);
+}
+
+.logo img {
+    max-height: 100px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    transition: color 0.3s;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: var(--accent-color);
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+}
+
+/* Ляв блок */
+.hero-content {
+    width: 50%;
+    margin-right: 20px;
+}
+
+/* Десен блок */
+.hero-logo {
+    width: 300px;
+    text-align: right;
+}
+
+.hero-logo img {
+    max-width: 200px;
+    height: auto;
+}
+
+/* Адаптивност за по-малки екрани */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-content, .hero-logo {
+        width: 100%;
+        margin-right: 0;
+    }
+    .hero-logo {
+        margin-top: 20px;
+        text-align: center; 
+    }
+}
+
+/* ГЛАВНО СЪДЪРЖАНИЕ */
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+main h1, main h2, main h3 {
+    color: var(--accent-color);
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+main p {
+    margin-bottom: 15px;
+}
+
+/* HERO СЕКЦИЯ*/
+.hero {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    background: url('url(images/Screenshot_2025-01-04_125125-removebg-preview.png)') 
+                no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; 
+    padding: 40px;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 0;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    z-index: 1;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin-top: 15px;
+    z-index: 1;
+}
+
+.hero button {
+    margin-top: 20px;
+    background-color: var(--accent-color);
+    color: #000;
+    border: none;
+    padding: 12px 24px;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 4px;
+    z-index: 1;
+    transition: background-color 0.3s;
+}
+
+.hero button:hover {
+    background-color: #cc0000;
+}
+
+/* СЕКЦИИ-БЛОКОВЕ */
+section {
+    margin-bottom: 40px;
+    background-color: transparent;
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.intro, .contact-info {
+    background-color: var(--secondary-color);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* ГАЛЕРИЯ */
+.trainer-photo {
+    float: left;
+    max-width: 300px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.gallery-container img {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    border: 2px solid #222;
+    border-radius: 4px;
+    transition: transform 0.3s;
+}
+
+.gallery-container img:hover {
+    transform: scale(1.03);
+}
+
+/* ТАБЛИЦА ЗА ЦЕНИ */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table thead {
+    background-color: var(--accent-color);
+    color: #000;
+}
+
+table th,
+table td {
+    border: 1px solid #444;
+    padding: 15px;
+    text-align: center;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #1b1b1b;
+}
+
+/* FOOTER */
+footer {
+    background-color: #000;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.7);
+}
+
+.footer-links a,
+.social-links a {
+    color: var(--accent-color);
+    text-decoration: none;
+    margin: 0 8px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover,
+.social-links a:hover {
+    color: var(--text-color);
+}
+
+/* АДАПТИВЕН ДИЗАЙН */
+@media (max-width: 992px) {
+    .hero {
+        height: 60vh;
+        align-items: center;
+        text-align: center;
+    }
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .hero p {
+        font-size: 1rem;
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .gallery-container {
+        gap: 5px;
+    }
+    .gallery-container img {
+        width: calc(50% - 5px);
+        height: auto;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: auto;
+        padding: 60px 20px;
+    }
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    .hero p {
+        font-size: 0.9rem;
+    }
+    .gallery-container img {
+        width: 100%;
+        margin: 0;
+    }
+}
